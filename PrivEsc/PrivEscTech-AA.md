@@ -70,7 +70,14 @@ You can enumerate the SIDs on a Windows system by running the following command 
 ```
 wmic useraccount get name,sid
 ```
-PAY CLOSE ATTENTION TO THE SIDS WHICH WILL QUICKLY IDENTIFY THE ADMIN AND GUEST ACCOUNTS
+*^^^ REMOVED IN WINDOW 11*
+Use in Powershell 5:
+```
+Get-LocalUser | Select-Object Name, SID
+```
+PAY CLOSE ATTENTION TO THE SIDS WHICH WILL QUICKLY IDENTIFY THE ADMIN AND GUEST ACCOUNTS.
+
+
 
 
 
