@@ -36,6 +36,9 @@ It is common to find misconfiged systems and services that may allow non-admin u
 
 ## Differences between Linux + Windows privesc
 The difference between Windows and Linux boil down to their unique design philosphy.
+
+<img width="729" height="277" alt="image" src="https://github.com/user-attachments/assets/74dfb930-521d-4b1a-9f0b-0d0b645e013f" />
+
 ### WINDOWS
 - Much more user centered design (UCD)
 - User auth on Windows is handled by the WINDOWS LOGON (Winlogon) process + SECURITY ACCOUNT MANAGER (SAM). SAM is a database that is used to manage and store user accounts on Windows systems.
@@ -45,7 +48,29 @@ The difference between Windows and Linux boil down to their unique design philos
 
 <img width="741" height="236" alt="image" src="https://github.com/user-attachments/assets/73178d82-ffd1-41d1-b9fe-bafbc635212c" />
 
-<img width="729" height="277" alt="image" src="https://github.com/user-attachments/assets/74dfb930-521d-4b1a-9f0b-0d0b645e013f" />
+SID String = inidicates that it's an SID string
+Revision = Always set to 1; this refers to the structure revision number
+Authroity ID = Specifies who created or granted the SID as follows:
+- Null: 0
+- World Authority: 1
+- Local Authority: 2
+- Creator Authority: 3
+- Non-unique authority: 4
+- NT Authority: 5
+Subauthority ID / Actual ID = Unique ID for the user, or comprises the domain identifier
+RelativeID (RID) = used in reference to other accounts to distinguish one user form another.
+
+Windows will have the following unique RIDs assigned to specific users. It is important to be able to identify privileged users based on their SID as follows: 
+- Administrator: 500
+- Guest user: 501
+- Domain administrator: 512
+- Domain Computer: 515
+
+You can enumerate the SIDs on a Windows system by running the following command in CMD:
+```
+wmic useraccount get name,sid
+```
+PAY CLOSE ATTENTION TO THE SIDS WHICH WILL QUICKLY IDENTIFY THE ADMIN AND GUEST ACCOUNTS
 
 
 
