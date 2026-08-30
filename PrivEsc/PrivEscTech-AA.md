@@ -34,5 +34,19 @@ It is common to find misconfiged systems and services that may allow non-admin u
 
 <img width="733" height="283" alt="image" src="https://github.com/user-attachments/assets/29d6b50b-d464-4d4f-aaff-e77b8254ae9d" />
 
+## Differences between Linux + Windows privesc
+The difference between Windows and Linux boil down to their unique design philosphy.
+### WINDOWS
+- Much more user centered design (UCD)
+- User auth on Windows is handled by the WINDOWS LOGON (Winlogon) process + SECURITY ACCOUNT MANAGER (SAM). SAM is a database that is used to manage and store user accounts on Windows systems.
+- Modern Windows utilize the New Technology LAN Manager 2 (NTLM2) encryption protocol for password hashing and encryption, which is significantly strong than the LAN Manager (LM) encryption protocol in older versions of Windows.
+- Authentication onto domains on Windows is typically facilitated by auth protocols such as Kerberos.
+- The process of user identification on Windows utilizes a SECURITY IDENTIFIER (SID) for identification. Each user and group has a unique SID that consists of:
+
+<img width="741" height="236" alt="image" src="https://github.com/user-attachments/assets/73178d82-ffd1-41d1-b9fe-bafbc635212c" />
+
+<img width="729" height="277" alt="image" src="https://github.com/user-attachments/assets/74dfb930-521d-4b1a-9f0b-0d0b645e013f" />
+
+
 
 
