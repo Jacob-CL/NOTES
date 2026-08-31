@@ -96,7 +96,14 @@ whoami \priv
 ** RUN CMD AS ADMIN TO SEE FULL SET OF PERMS ** Otheriwse the cmd.exe process uses an access token that has restricts privileges. If you run cmd.exe as administrator, the user's access token will be listed with all privileges.
 
 ## LINUX
+- User account details are stored in `/etc/passwd` file, accessible by all users. This file contains the user account name, the user ID (UID), an encrypted password, a group ID (GID) and personal user information.
+- Most old Linux distros use MD5 which is easy to crack, newer ones use SHA256, much harder.
+- Root account always has the UID of 0
+- Access tokens work similarly to Windows, but stored in memory (RAM) and attached to processes when initialized. The access token will contain, UID, GID, user privs, primary group UID, ACL.
 
+# TYPES OF PRIV ESC ATTACKS
+## KERNEL EXPLOITS
+- Are programs or binaries that affect both Windows or Linux and are designed to exploit vulns in the underlying kernel, to execute arbitrary code with elevated / root perms.
 
 
 
