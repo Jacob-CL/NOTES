@@ -104,6 +104,11 @@ whoami \priv
 # TYPES OF PRIV ESC ATTACKS
 ## KERNEL EXPLOITS
 - Are programs or binaries that affect both Windows or Linux and are designed to exploit vulns in the underlying kernel, to execute arbitrary code with elevated / root perms.
+- Requires a good amount of enumeration to find OS version, installed patches / hotfixes to find any vuln to kernel exploits.
+- Find exploits in EXPLOITDB, the exploit code needs to be inspected and altered to suit your parameters and functionality. Once customized, compile into binary and transferred to target.
+- Kernel exploits are extremely powerful and can cause system crashes and kernel panics that hinder the privesc process and cause damage to the system.
+
+## EXPLOITING SUID BINARIES
 
 
 
